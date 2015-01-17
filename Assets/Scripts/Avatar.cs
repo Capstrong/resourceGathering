@@ -6,6 +6,7 @@ public class Avatar : MonoBehaviour {
     public int resourceCount;
     public float rotSpeed;
     public float linearSpeed;
+    public GameObject resourcePopPrefab;
 
 	// Use this for initialization
 	void Start () {
@@ -26,5 +27,6 @@ public class Avatar : MonoBehaviour {
         Debug.Log("resource get");
         resourceCount++;
         Destroy(other.gameObject);
+        Instantiate(resourcePopPrefab, transform.position, Quaternion.identity);
     }
 }
