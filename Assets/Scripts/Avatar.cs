@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Avatar : MonoBehaviour {
 
@@ -7,6 +8,7 @@ public class Avatar : MonoBehaviour {
     public float rotSpeed;
     public float linearSpeed;
     public GameObject resourcePopPrefab;
+    public Text textUI;
 
 	// Use this for initialization
 	void Start () {
@@ -18,8 +20,6 @@ public class Avatar : MonoBehaviour {
         transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * rotSpeed);
 
         transform.position += Input.GetAxis("Vertical") * transform.forward * linearSpeed;
-
-        Debug.DrawLine(transform.position, transform.position + transform.forward * 10);
 	}
 
     void OnTriggerEnter(Collider other)
@@ -28,5 +28,11 @@ public class Avatar : MonoBehaviour {
         resourceCount++;
         Destroy(other.gameObject);
         Instantiate(resourcePopPrefab, transform.position, Quaternion.identity);
+        UpdateUI();
+    }
+
+    void UpdateUI()
+    {
+        textUI.text = "Apples: " + resourceCount;
     }
 }
