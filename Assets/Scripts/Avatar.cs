@@ -15,6 +15,7 @@ public class Avatar : MonoBehaviour {
 	void Start () {
         resourceCount[ResourceType.Apple] = 0;
         resourceCount[ResourceType.Joy] = 0;
+        resourceCount[ResourceType.Creativity] = 0;
 
         UpdateUI();
 	}
@@ -44,6 +45,7 @@ public class Avatar : MonoBehaviour {
     void UpdateUI()
     {
         textUI.text = "Apples: " + resourceCount[ResourceType.Apple]
-                    + "\nJoy: " + resourceCount[ResourceType.Joy];
+                    + "\nJoy: " + resourceCount[ResourceType.Joy]
+                    + "\nCreativity: " + resourceCount[ResourceType.Creativity];
     }
 }

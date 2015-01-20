@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60aadd0a27e17c499f49ec331164d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourcePrefab: {fileID: 100000, guid: 6d7b405ffef887c40b357ff50bf6b41c, type: 2}
+  resourcePrefab: {fileID: 100000, guid: 167fccbb38486bc45a367040b83f63f2, type: 2}
   total: 5
   radius: 5
 --- !u!4 &714392357
@@ -739,6 +739,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: efb1547f946d92b46b97cb89c8449a59, type: 2}
+      propertyPath: resourcePrefab
+      value: 
+      objectReference: {fileID: 100000, guid: 167fccbb38486bc45a367040b83f63f2, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: efb1547f946d92b46b97cb89c8449a59, type: 2}
   m_RootGameObject: {fileID: 714392355}
@@ -786,7 +790,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Apples: 0'
+  m_Text: 'Apples: 0
+
+    foo
+
+    bar'
 --- !u!222 &1660440463
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -807,9 +815,9 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 82.4000015, y: -31.8999996}
-  m_SizeDelta: {x: 160, y: 60}
-  m_Pivot: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 2.3999939, y: -90.5999985}
+  m_SizeDelta: {x: 160, y: 90.4000015}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &1707331541
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public enum ResourceType
     Invalid,
     Apple,
     Joy,
+    Creativity,
 }
 
 public class resource : MonoBehaviour {
