@@ -24,11 +24,16 @@ public class Avatar : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("resource get");
-        resourceCount++;
-        Destroy(other.gameObject);
-        Instantiate(resourcePopPrefab, transform.position, Quaternion.identity);
-        UpdateUI();
+        resource resourceComponent = other.gameObject.GetComponent<resource>();
+
+        if (resourceComponent != null)
+        {
+            Debug.Log("resource get");
+            resourceCount++;
+            Destroy(other.gameObject);
+            Instantiate(resourcePopPrefab, transform.position, Quaternion.identity);
+            UpdateUI();
+        }
     }
 
     void UpdateUI()
