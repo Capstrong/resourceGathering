@@ -8,12 +8,18 @@ public class Avatar : MonoBehaviour {
     public Dictionary<ResourceType, int> resourceCount = new Dictionary<ResourceType, int>();
     public float rotSpeed;
     public float linearSpeed;
+    public float jumpForce;
     public GameObject resourcePopPrefab;
-    public Text textUI;
+    public Text resourceTextUI;
+    public Text statTextUI;
 
 	// Use this for initialization
 	void Start () {
         resourceCount[ResourceType.Apple] = 0;
+        resourceCount[ResourceType.Joy] = 0;
+        resourceCount[ResourceType.Creativity] = 0;
+
+        UpdateUI();
 	}
 	
 	// Update is called once per frame
@@ -21,6 +27,11 @@ public class Avatar : MonoBehaviour {
         transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * rotSpeed);
 
         transform.position += Input.GetAxis("Vertical") * transform.forward * linearSpeed;
+
+        if (Input.GetKeyDown(KeyCode.Space) && transform.position.y < 0.5f)
+        {
+            rigidbody.AddForce(Vector3.up * jumpForce);
+        }
 
 	}
 
@@ -31,7 +42,7 @@ public class Avatar : MonoBehaviour {
         if (resourceComponent != null)
         {
             Debug.Log("resource get");
-            resourceCount[resourceComponent.type]++;
+            resourceCount[resourceComponent.type] += resourceComponent.amount;
             Destroy(other.gameObject);
             Instantiate(resourcePopPrefab, transform.position, Quaternion.identity);
             UpdateUI();
@@ -40,6 +51,12 @@ public class Avatar : MonoBehaviour {
 
     void UpdateUI()
     {
-        textUI.text = "Apples: " + resourceCount[ResourceType.Apple];
+        resourceTextUI.text = "Apples: " + resourceCount[ResourceType.Apple]
+                    + "\nJoy: " + resourceCount[ResourceType.Joy]
+                    + "\nCreativity: " + resourceCount[ResourceType.Creativity];
+
+        statTextUI.text = "Linear Speed: " + linearSpeed
+                        + "\nRotational Speed: " + rotSpeed
+                        + "\nJumpForce: " + jumpForce;
     }
 }

@@ -20,6 +20,11 @@ public class resourceSpawner : MonoBehaviour {
 
 	}
 
+     void OnDrawGizmos()
+    {
+        Gizmos.DrawIcon(transform.position + Vector3.up * .5f, "S.png", true);
+    }
+
     // Update is called once per frame
     void Update()
     {
