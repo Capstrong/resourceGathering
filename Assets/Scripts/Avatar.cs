@@ -14,6 +14,9 @@ public class Avatar : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         resourceCount[ResourceType.Apple] = 0;
+        resourceCount[ResourceType.Joy] = 0;
+
+        UpdateUI();
 	}
 	
 	// Update is called once per frame
@@ -31,7 +34,7 @@ public class Avatar : MonoBehaviour {
         if (resourceComponent != null)
         {
             Debug.Log("resource get");
-            resourceCount[resourceComponent.type]++;
+            resourceCount[resourceComponent.type] += resourceComponent.amount;
             Destroy(other.gameObject);
             Instantiate(resourcePopPrefab, transform.position, Quaternion.identity);
             UpdateUI();
@@ -40,6 +43,7 @@ public class Avatar : MonoBehaviour {
 
     void UpdateUI()
     {
-        textUI.text = "Apples: " + resourceCount[ResourceType.Apple];
+        textUI.text = "Apples: " + resourceCount[ResourceType.Apple]
+                    + "\nJoy: " + resourceCount[ResourceType.Joy];
     }
 }

@@ -262,6 +262,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: efb1547f946d92b46b97cb89c8449a59, type: 2}
+      propertyPath: resourcePrefab
+      value: 
+      objectReference: {fileID: 100000, guid: ec19f10f2641ff24e96a29a46a5ec0c5, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: efb1547f946d92b46b97cb89c8449a59, type: 2}
   m_RootGameObject: {fileID: 1707331541}
@@ -803,8 +807,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 82.4000015, y: -15.1000004}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 82.4000015, y: -31.8999996}
+  m_SizeDelta: {x: 160, y: 60}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &1707331541
 GameObject:
@@ -834,7 +838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60aadd0a27e17c499f49ec331164d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourcePrefab: {fileID: 100000, guid: 6d7b405ffef887c40b357ff50bf6b41c, type: 2}
+  resourcePrefab: {fileID: 100000, guid: ec19f10f2641ff24e96a29a46a5ec0c5, type: 2}
   total: 5
   radius: 5
 --- !u!4 &1707331543
