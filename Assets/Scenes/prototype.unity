@@ -475,7 +475,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0ca0ed7eb970e6409af46696177af51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceCount: 0
   rotSpeed: 3
   linearSpeed: .100000001
   resourcePopPrefab: {fileID: 100000, guid: 578bdd3bae07fb449892972ea65b51fa, type: 2}
